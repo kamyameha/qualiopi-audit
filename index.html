@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#356db5" />
-  <title>Entre-Deux — Suivi Qualiopi</title>
+  <meta name="theme-color" content="#ffffff" />
+  <title>Formation Entre-Deux — Suivi Qualiopi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,33 +12,29 @@
 </head>
 <body>
   <header class="entete">
-    <button class="logo-bouton" id="retourAccueil" aria-label="Retour aux audits">
+    <button class="logo-bouton" id="retourAccueil" aria-label="Retour à l’accueil des audits">
       <img src="assets/logo-entre-deux.png" alt="Formation Entre-Deux" />
     </button>
-    <div class="entete-actions">
-      <button class="bouton secondaire" id="exporterDonnees">Exporter</button>
-      <label class="bouton secondaire fichier-import">Importer<input id="importerDonnees" type="file" accept="application/json" hidden></label>
-      <button class="bouton principal" id="nouvelAudit">Nouvel audit</button>
+    <div class="entete-actions" id="actionsEntete">
+      <button class="bouton principal" id="nouvelAudit">Créer un audit</button>
     </div>
   </header>
 
   <main id="application"></main>
-
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <dialog id="dialogueAudit" class="dialogue">
     <form method="dialog" id="formulaireAudit">
       <div class="dialogue-entete">
-        <div>
-          <p class="sur-titre">NOUVEL AUDIT</p>
-          <h2>Créer un audit</h2>
-        </div>
+        <div><p class="sur-titre" id="libelleDialogue">NOUVEL AUDIT</p><h2 id="titreDialogue">Créer un audit</h2></div>
         <button class="icone-bouton" value="annuler" aria-label="Fermer">×</button>
       </div>
-      <label>Nom de l’audit<input name="nom" required placeholder="Audit de surveillance 2026"></label>
-      <label>Date prévue<input name="date" type="date"></label>
+      <input type="hidden" name="auditId">
+      <label>Nom de l’audit<input name="nom" required placeholder="Audit 2026"></label>
+      <label>Date de l’audit<input name="date" type="date"></label>
       <label>Type d’audit<select name="type"><option>Audit initial</option><option selected>Audit de surveillance</option><option>Audit de renouvellement</option></select></label>
-      <div class="dialogue-actions"><button class="bouton secondaire" value="annuler">Annuler</button><button class="bouton principal" value="creer">Créer l’audit</button></div>
+      <label>Responsable de l’audit<input name="responsable" required placeholder="Ex. Betty"></label>
+      <div class="dialogue-actions"><button class="bouton secondaire" value="annuler">Annuler</button><button class="bouton principal" value="enregistrer" id="enregistrerAudit">Créer l’audit</button></div>
     </form>
   </dialog>
 
