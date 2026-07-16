@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-v3.css?v=20260716-3" />
 </head>
 <body>
   <header class="entete">
@@ -38,6 +38,18 @@
     </form>
   </dialog>
 
-  <script src="app.js"></script>
+  <script>
+    // Nettoie les anciens caches de la première version afin d’éviter
+    // un mélange entre les anciens styles et les nouveaux fichiers.
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(registrations => {
+        registrations.forEach(registration => registration.unregister());
+      });
+    }
+    if ('caches' in window) {
+      caches.keys().then(keys => Promise.all(keys.map(key => caches.delete(key))));
+    }
+  </script>
+  <script src="app-v3.js?v=20260716-3"></script>
 </body>
 </html>
