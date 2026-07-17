@@ -1,40 +1,41 @@
 /* Audit interface aligned with Formation Entre-Deux site components. */
-.entete-actions{gap:40px;align-items:center}
-.lien-navigation{border:0;background:transparent;padding:0;cursor:pointer;font-family:Inter,Arial,sans-serif;font-size:16px;font-weight:400;line-height:27px;color:#000;display:inline-flex;align-items:center}
+.entete-actions{gap:52px;align-items:center}
+.lien-navigation{border:0;background:transparent;padding:0;cursor:pointer;font-family:Inter,Arial,sans-serif;font-size:18px;font-weight:400;line-height:27px;color:#000;display:inline-flex;align-items:center}
 .lien-navigation:hover{text-decoration:none}
-.entete-actions .bouton.principal{margin-left:2px}
+.entete-actions .bouton.principal{margin-left:0;min-height:48px;padding:15px 24px;font-size:16px}
 
 .ligne-audit{cursor:pointer;transition:none}
 .ligne-audit:hover{background:transparent}
 .ligne-audit h2,.ligne-audit p{font-weight:400!important}
 
-/* The audit content starts with the same 40px rhythm used by the site/header. */
-.contenu-audit{padding-top:40px}
-.barre-laterale{padding-top:40px}
+/* The audit page starts at the same vertical position as the homepage hero content: 168px from the viewport top. */
+.contenu-audit{padding-top:76px}
+.barre-laterale{padding-top:76px}
 .en-tete-indicateur{align-items:flex-end;margin-bottom:24px}
 .en-tete-indicateur>div:first-child{min-width:0}
 
-/* Minimal status select: no underline, arrow centered, baseline aligned with H1. */
-.statut-indicateur{min-width:190px;position:relative;align-self:flex-end;margin-bottom:4px}
-.statut-indicateur select{width:100%;min-height:44px;padding:10px 46px 10px 14px;border:0;border-radius:0;background-color:transparent;font-size:16px;font-weight:400;line-height:24px;appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#777 50%),linear-gradient(135deg,#777 50%,transparent 50%);background-position:calc(100% - 22px) 50%,calc(100% - 17px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+/* Remove the left hero eyebrow as requested. */
+.hero-gauche{visibility:hidden}
+
+/* Minimal status select: no underline, black chevron, bottom-aligned with the H1. */
+.statut-indicateur{min-width:190px;position:relative;align-self:flex-end;margin-bottom:0}
+.statut-indicateur select{width:100%;min-height:44px;padding:10px 46px 10px 14px;border:0;border-radius:0;background-color:transparent;font-size:16px;font-weight:400;line-height:24px;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8' fill='none'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-position:calc(100% - 18px) 50%;background-size:14px 8px;background-repeat:no-repeat}
 .statut-indicateur select:focus{outline:0}
 
 /* More breathing room in the left navigation. */
-.audit-titre{margin-bottom:28px}
-.resume{margin:0 0 28px;padding:22px 0}
-.outils{margin-bottom:28px}
-.navigation-indicateurs{display:grid;gap:8px}
-.critere-groupe{border-bottom:1px solid #e2e2e2;padding-bottom:4px}
-.critere-nav{width:100%;margin:0;padding:17px 2px;border:0;background:transparent;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;cursor:pointer;color:#969696;font-family:Inter,Arial,sans-serif;font-size:12px;font-weight:400;line-height:18px;text-transform:uppercase}
-.critere-nav .chevron{width:12px;height:12px;flex:none;position:relative;transition:transform .15s ease}
-.critere-nav .chevron::before,.critere-nav .chevron::after{content:"";position:absolute;top:5px;width:7px;height:1px;background:#969696}
-.critere-nav .chevron::before{left:0;transform:rotate(45deg)}
-.critere-nav .chevron::after{right:0;transform:rotate(-45deg)}
+.audit-titre{margin-bottom:32px}
+.resume{margin:0 0 32px;padding:24px 0}
+.outils{margin-bottom:32px}
+.navigation-indicateurs{display:grid;gap:10px}
+.critere-groupe{border-bottom:1px solid #e2e2e2;padding-bottom:6px}
+.critere-nav{width:100%;margin:0;padding:18px 2px;border:0;background:transparent;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;cursor:pointer;color:#969696;font-family:Inter,Arial,sans-serif;font-size:12px;font-weight:400;line-height:18px;text-transform:uppercase}
+.critere-nav .chevron{width:14px;height:8px;flex:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8' fill='none'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%23969696' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-position:center;background-size:14px 8px;background-repeat:no-repeat;transition:transform .15s ease}
+.critere-nav .chevron::before,.critere-nav .chevron::after{display:none}
 .critere-groupe.ouvert .critere-nav .chevron{transform:rotate(180deg)}
-.critere-indicateurs{padding:2px 0 14px;display:grid;gap:3px}
+.critere-indicateurs{padding:4px 0 16px;display:grid;gap:5px}
 .critere-indicateurs[hidden]{display:none}
-.indicateur-nav{font-weight:400;padding-top:11px;padding-bottom:11px}
-.outils-audit{gap:11px;margin-top:32px}
+.indicateur-nav{font-weight:400;padding-top:12px;padding-bottom:12px}
+.outils-audit{gap:12px;margin-top:36px}
 
 /* File + URL evidence types. */
 .preuve-types{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
@@ -55,19 +56,15 @@
 .dialogue label{display:grid;gap:8px;font-family:Inter,Arial,sans-serif;font-size:16px;font-weight:400;line-height:24px}
 .dialogue label:nth-of-type(3),.dialogue label:nth-of-type(4){grid-column:1/-1}
 .dialogue input,.dialogue select{width:100%;min-height:48px;padding:10px 40px 10px 0;border:0;border-bottom:1px solid #222;border-radius:0;background:#fff;font-size:18px;font-weight:400;outline:0}
-.dialogue select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#111 50%),linear-gradient(135deg,#111 50%,transparent 50%);background-position:calc(100% - 10px) 50%,calc(100% - 5px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.dialogue select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8' fill='none'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-position:calc(100% - 8px) 50%;background-size:14px 8px;background-repeat:no-repeat}
 .dialogue input:focus,.dialogue select:focus{border-bottom-color:#000}
 .dialogue-actions{grid-column:1/-1;justify-content:flex-start;margin-top:10px}
 .dialogue-actions .bouton{min-width:180px;min-height:54px;padding:16px 28px;font-size:16px;font-weight:400}
 
-/* Reinforce the exact top alignment of both hero paragraphs. */
-.hero-gauche,.hero-droite p{align-self:start}
-.hero-gauche .sur-titre{margin:0!important;padding:0!important}
-
 @media(max-width:950px){
-  .entete-actions{gap:20px}
-  .lien-navigation{font-size:14px}
-  .contenu-audit,.barre-laterale{padding-top:32px}
+  .entete-actions{gap:24px}
+  .lien-navigation{font-size:15px}
+  .contenu-audit,.barre-laterale{padding-top:48px}
   .preuve-types{grid-template-columns:1fr}
   .dialogue form{padding:44px 32px;grid-template-columns:1fr;gap:28px}
   .dialogue label:nth-of-type(3),.dialogue label:nth-of-type(4){grid-column:auto}
