@@ -1,34 +1,28 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Préparation et suivi des audits Qualiopi de Formation Entre-Deux.">
   <title>Formation Entre-Deux — Suivi Qualiopi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles-v4.css?v=20260716-4" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <header class="entete">
-    <button class="logo-bouton" id="retourAccueil" aria-label="Retour à l’accueil des audits">
-      <img src="assets/logo-entre-deux.png" alt="Formation Entre-Deux" />
-    </button>
-    <div class="entete-actions" id="actionsEntete">
-      <button class="bouton principal" id="nouvelAudit">Créer un audit</button>
-    </div>
+    <button class="logo-bouton" id="retourAccueil" aria-label="Retour à l’accueil des audits"><img src="assets/logo-entre-deux.png" alt="Formation Entre-Deux"></button>
+    <div class="entete-actions" id="actionsEntete"><button class="bouton principal" id="nouvelAudit">Créer un audit</button></div>
   </header>
-
   <main id="application"></main>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
+  <div class="mise-a-jour" id="miseAJour" hidden><span>Une nouvelle version est disponible.</span><button id="actualiserApplication">Actualiser</button></div>
   <dialog id="dialogueAudit" class="dialogue">
     <form method="dialog" id="formulaireAudit">
-      <div class="dialogue-entete">
-        <div><p class="sur-titre" id="libelleDialogue">NOUVEL AUDIT</p><h2 id="titreDialogue">Créer un audit</h2></div>
-        <button class="icone-bouton" value="annuler" aria-label="Fermer">×</button>
-      </div>
+      <div class="dialogue-entete"><div><p class="sur-titre" id="libelleDialogue">Nouvel audit</p><h2 id="titreDialogue">Créer un audit</h2></div><button class="icone-bouton" value="annuler" aria-label="Fermer">×</button></div>
       <input type="hidden" name="auditId">
       <label>Nom de l’audit<input name="nom" required placeholder="Audit 2026"></label>
       <label>Date de l’audit<input name="date" type="date"></label>
@@ -37,19 +31,8 @@
       <div class="dialogue-actions"><button class="bouton secondaire" value="annuler">Annuler</button><button class="bouton principal" value="enregistrer" id="enregistrerAudit">Créer l’audit</button></div>
     </form>
   </dialog>
-
-  <script>
-    // Nettoie les anciens caches de la première version afin d’éviter
-    // un mélange entre les anciens styles et les nouveaux fichiers.
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(registrations => {
-        registrations.forEach(registration => registration.unregister());
-      });
-    }
-    if ('caches' in window) {
-      caches.keys().then(keys => Promise.all(keys.map(key => caches.delete(key))));
-    }
-  </script>
-  <script src="app-v4.js?v=20260716-4"></script>
+  <script src="js/version.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/service-worker.js"></script>
 </body>
 </html>

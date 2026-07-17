@@ -1,0 +1,1 @@
+window.VERSION_APPLICATION='1.0.0';
