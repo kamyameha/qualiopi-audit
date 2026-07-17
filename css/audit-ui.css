@@ -12,7 +12,7 @@
 /* Exact site spacing: only 52px of bottom padding on the H1. */
 .hero{row-gap:0}
 .hero-droite h1{padding-bottom:52px}
-.hero-droite p{margin-top:0}
+.hero-droite p{margin:0!important;padding:0!important}
 
 /* The audit page starts at the same vertical position as the homepage hero content: 168px from the viewport top. */
 .contenu-audit{padding-top:76px}
