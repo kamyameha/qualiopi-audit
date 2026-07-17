@@ -1,8 +1,23 @@
 :root {
   --entre-deux-pink: #fbe9e2;
-  --entre-deux-orange: #f4773b;
-  --entre-deux-brown: #32170c;
+  --entre-deux-orange: #EF773E;
+  --entre-deux-brown: #000000C9;
   --entre-deux-page-padding: 40px;
+}
+
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+}
+
+body,
+p,
+.hero-droite p,
+.sur-titre,
+.ligne-audit p {
+  font-family: Inter, Arial, sans-serif;
+  font-weight: 400;
 }
 
 .page {
@@ -23,7 +38,12 @@
   letter-spacing: -3px;
 }
 
-/* Audit list — same proportions as the site's project/training table. */
+.hero-droite p {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+/* Audit list — values aligned with the site's APG table. */
 .liste-audits {
   margin-right: calc(var(--entre-deux-page-padding) * -1);
   margin-bottom: -80px;
@@ -44,6 +64,7 @@
   padding-top: 16px;
   padding-bottom: 16px;
   font-size: 13px;
+  font-weight: 400;
   line-height: 1;
   letter-spacing: 0;
   border-bottom: 1px solid #262626;
@@ -69,7 +90,7 @@
 
 .ligne-audit > * { padding-right: 20px; }
 
-/* Empty state: the table and its pink background do not exist visually. */
+/* When no audit exists, the table and pink section are fully removed visually. */
 .liste-audits:has(.vide) {
   padding: 0;
   background: transparent;
@@ -79,42 +100,45 @@
   display: none;
 }
 
-/* Exact full-width CTA structure used on the Formation Entre-Deux site. */
+/* Exact desktop CTA values from section_76117a37b / content_897eba247 / content_fb154a5b6. */
 .vide {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 322px;
-  column-gap: 80px;
+  grid-template-columns: 10fr 2fr;
+  gap: 35px;
   align-items: center;
   width: 100%;
-  min-height: 184px;
+  min-height: 0;
   margin: 0;
-  padding: 30px 54px;
+  padding: 20px 40px;
   background: var(--entre-deux-orange);
   border: 0;
 }
 
 .vide h2 {
-  max-width: 560px;
+  max-width: none;
   margin: 0;
-  font-size: 52px;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 38px;
   font-weight: 700;
-  line-height: 1.12;
-  letter-spacing: -1.5px;
+  line-height: 48px;
+  letter-spacing: 0;
 }
 
 .vide p { display: none; }
 
 .vide .bouton.principal {
-  width: 322px;
-  min-width: 322px;
-  min-height: 68px;
-  padding: 18px 42px;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 16px;
   color: #fff;
-  font-size: 18px;
-  font-weight: 400;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
   background: var(--entre-deux-brown);
-  border: 2px solid #000;
-  border-radius: 14px;
+  border: 1px solid #000;
+  border-radius: 10px;
 }
 
 .vide .bouton.principal:hover { background: #000; }
@@ -132,11 +156,15 @@
   }
   .vide {
     grid-template-columns: 1fr;
-    row-gap: 32px;
-    justify-items: start;
-    padding: 40px 32px;
+    gap: 34px;
+    justify-items: stretch;
+    padding: 20px 40px;
   }
-  .vide h2 { font-size: 44px; }
+  .vide h2 {
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 600px) {
@@ -146,13 +174,10 @@
   .ligne-audit h2 { font-size: 21px; line-height: 28px; }
   .ligne-audit p { font-size: 16px; line-height: 24px; }
   .vide {
-    min-height: 0;
-    padding: 34px 24px;
+    padding: 20px 40px;
   }
-  .vide h2 { font-size: 36px; line-height: 1.15; }
-  .vide .bouton.principal {
-    width: 100%;
-    min-width: 0;
-    min-height: 58px;
+  .vide h2 {
+    font-size: 30px;
+    line-height: 40px;
   }
 }
