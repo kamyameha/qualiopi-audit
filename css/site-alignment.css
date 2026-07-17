@@ -136,7 +136,8 @@ p,
   gap: 35px;
   align-items: center;
   width: 100%;
-  min-height: 0;
+  height: 116px;
+  min-height: 116px;
   margin: 0;
   padding: 20px 40px;
   background: var(--entre-deux-orange);
@@ -209,6 +210,8 @@ p,
     grid-template-columns: 1fr;
     gap: 34px;
     justify-items: stretch;
+    height: auto;
+    min-height: 116px;
     padding: 20px 40px;
   }
   .vide h2 {
@@ -225,6 +228,7 @@ p,
   .ligne-audit h2 { font-size: 21px; line-height: 28px; }
   .ligne-audit p { font-size: 16px; line-height: 24px; }
   .vide {
+    height: auto;
     padding: 20px 40px;
   }
   .vide h2 {
