@@ -1,11 +1,10 @@
 :root {
   --entre-deux-pink: #fbe9e2;
-  --entre-deux-orange: #ef773e;
-  --entre-deux-brown: #33180d;
+  --entre-deux-orange: #f4773b;
+  --entre-deux-brown: #32170c;
   --entre-deux-page-padding: 40px;
 }
 
-/* Home page — values taken from the current Formation Entre-Deux Semplice layout. */
 .page {
   padding-right: var(--entre-deux-page-padding);
   padding-left: var(--entre-deux-page-padding);
@@ -24,7 +23,7 @@
   letter-spacing: -3px;
 }
 
-/* Existing audits: same visual language as the formation/project table. */
+/* Audit list — same proportions as the site's project/training table. */
 .liste-audits {
   margin-right: calc(var(--entre-deux-page-padding) * -1);
   margin-bottom: -80px;
@@ -58,9 +57,7 @@
   transition: background-color .15s ease-out;
 }
 
-.ligne-audit:hover {
-  background: rgba(255, 255, 255, .25);
-}
+.ligne-audit:hover { background: rgba(255,255,255,.25); }
 
 .ligne-audit h2,
 .ligne-audit p {
@@ -70,123 +67,89 @@
   line-height: 32px;
 }
 
-.ligne-audit > * {
-  padding-right: 20px;
+.ligne-audit > * { padding-right: 20px; }
+
+/* Empty state: the table and its pink background do not exist visually. */
+.liste-audits:has(.vide) {
+  padding: 0;
+  background: transparent;
 }
 
-/* Empty state: use the site's full-width orange CTA component. */
+.liste-audits:has(.vide) .entete-tableau {
+  display: none;
+}
+
+/* Exact full-width CTA structure used on the Formation Entre-Deux site. */
 .vide {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 48px;
+  grid-template-columns: minmax(0, 1fr) 322px;
+  column-gap: 80px;
   align-items: center;
+  width: 100%;
   min-height: 184px;
-  margin: -120px calc(var(--entre-deux-page-padding) * -1) -70px;
+  margin: 0;
   padding: 30px 54px;
   background: var(--entre-deux-orange);
   border: 0;
 }
 
 .vide h2 {
-  max-width: 620px;
+  max-width: 560px;
   margin: 0;
   font-size: 52px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.12;
   letter-spacing: -1.5px;
 }
 
-.vide p {
-  display: none;
-}
+.vide p { display: none; }
 
 .vide .bouton.principal {
+  width: 322px;
   min-width: 322px;
   min-height: 68px;
   padding: 18px 42px;
   color: #fff;
   font-size: 18px;
+  font-weight: 400;
   background: var(--entre-deux-brown);
   border: 2px solid #000;
   border-radius: 14px;
 }
 
-.vide .bouton.principal:hover {
-  background: #000;
-}
+.vide .bouton.principal:hover { background: #000; }
 
 @media (max-width: 950px) {
-  :root {
-    --entre-deux-page-padding: 24px;
-  }
-
-  .hero {
-    min-height: 620px;
-  }
-
-  .hero-droite h1 {
-    font-size: 54px;
-    line-height: 60px;
-  }
-
-  .liste-audits {
-    padding-top: 80px;
-  }
-
+  :root { --entre-deux-page-padding: 24px; }
+  .hero { min-height: 620px; }
+  .hero-droite h1 { font-size: 54px; line-height: 60px; }
+  .liste-audits:not(:has(.vide)) { padding-top: 80px; }
   .entete-tableau,
   .ligne-audit {
     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     padding-right: 16px;
     padding-left: 16px;
   }
-
   .vide {
-    margin-top: -80px;
     grid-template-columns: 1fr;
+    row-gap: 32px;
     justify-items: start;
     padding: 40px 32px;
   }
-
-  .vide h2 {
-    font-size: 44px;
-  }
+  .vide h2 { font-size: 44px; }
 }
 
 @media (max-width: 600px) {
-  .hero-droite h1 {
-    font-size: 42px;
-    line-height: 48px;
-  }
-
-  .liste-audits {
-    padding-top: 56px;
-  }
-
-  .ligne-audit {
-    padding: 22px 10px;
-  }
-
-  .ligne-audit h2 {
-    font-size: 21px;
-    line-height: 28px;
-  }
-
-  .ligne-audit p {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
+  .hero-droite h1 { font-size: 42px; line-height: 48px; }
+  .liste-audits:not(:has(.vide)) { padding-top: 56px; }
+  .ligne-audit { padding: 22px 10px; }
+  .ligne-audit h2 { font-size: 21px; line-height: 28px; }
+  .ligne-audit p { font-size: 16px; line-height: 24px; }
   .vide {
     min-height: 0;
-    margin-top: -56px;
     padding: 34px 24px;
   }
-
-  .vide h2 {
-    font-size: 36px;
-    line-height: 1.15;
-  }
-
+  .vide h2 { font-size: 36px; line-height: 1.15; }
   .vide .bouton.principal {
     width: 100%;
     min-width: 0;
