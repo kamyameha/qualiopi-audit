@@ -9,9 +9,10 @@
 .ligne-audit:hover{background:transparent}
 .ligne-audit h2,.ligne-audit p{font-weight:400!important}
 
-/* Exact visible spacing between the homepage H1 and paragraph. */
-.hero{row-gap:52px}
+/* Match the visible title-to-copy spacing used by the existing site section. */
+.hero{row-gap:0}
 .hero-droite h1{padding-bottom:0}
+.hero-droite p{margin-top:120px}
 
 /* The audit page starts at the same vertical position as the homepage hero content: 168px from the viewport top. */
 .contenu-audit{padding-top:76px}
@@ -70,6 +71,7 @@
   .entete-actions:has(.lien-navigation){position:static;display:flex;gap:20px}
   .lien-navigation{font-size:14px}
   .entete-actions:has(.lien-navigation) .bouton.principal{min-height:0;padding:10px 16px;font-size:14px}
+  .hero-droite p{margin-top:42px}
   .contenu-audit,.barre-laterale{padding-top:48px}
   .dialogue form{padding:44px 32px;grid-template-columns:1fr;gap:28px}
   .dialogue label:nth-of-type(3),.dialogue label:nth-of-type(4){grid-column:auto}
