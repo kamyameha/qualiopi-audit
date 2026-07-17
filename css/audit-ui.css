@@ -9,10 +9,10 @@
 .ligne-audit:hover{background:transparent}
 .ligne-audit h2,.ligne-audit p{font-weight:400!important}
 
-/* Match the visible title-to-copy spacing used by the existing site section. */
+/* Exact site spacing: only 52px of bottom padding on the H1. */
 .hero{row-gap:0}
-.hero-droite h1{padding-bottom:0}
-.hero-droite p{margin-top:120px}
+.hero-droite h1{padding-bottom:52px}
+.hero-droite p{margin-top:0}
 
 /* The audit page starts at the same vertical position as the homepage hero content: 168px from the viewport top. */
 .contenu-audit{padding-top:76px}
@@ -43,13 +43,27 @@
 .indicateur-nav{font-weight:400;padding-top:12px;padding-bottom:12px}
 .outils-audit{gap:12px;margin-top:36px}
 
-/* File and URL evidence blocks are stacked, one per row. */
+/* When filtering by a status, matching criteria open automatically. */
+.audit-page:has([data-filtre="non_commence"].actif) .critere-indicateurs[hidden],
+.audit-page:has([data-filtre="en_cours"].actif) .critere-indicateurs[hidden],
+.audit-page:has([data-filtre="termine"].actif) .critere-indicateurs[hidden]{display:grid}
+.audit-page:has([data-filtre="non_commence"].actif) .critere-nav .chevron,
+.audit-page:has([data-filtre="en_cours"].actif) .critere-nav .chevron,
+.audit-page:has([data-filtre="termine"].actif) .critere-nav .chevron{transform:rotate(180deg)}
+
+/* File and URL evidence blocks share the same component treatment. */
 .preuve-types{display:grid;grid-template-columns:1fr;gap:32px;align-items:start}
-.ajout-lien{border:1px solid #bbb;padding:24px;display:grid;gap:18px}
+.depot,.ajout-lien{border:1px solid #bbb;border-radius:10px;padding:24px;background:#fff}
+.ajout-lien{display:grid;gap:18px}
 .ajout-lien label{display:grid;gap:7px;font-weight:400;font-size:14px}
 .ajout-lien input{width:100%;border:0;border-bottom:1px solid #222;border-radius:0;padding:10px 0;background:#fff;font-size:16px;outline:0}
 .ajout-lien .bouton{justify-self:start}
-.fichier a.bouton{text-decoration:none}
+.fichier{border:1px solid #ddd;border-radius:10px;padding:14px 16px;margin-top:10px}
+.fichier a.bouton{border:0;border-radius:0;padding:0;background:transparent;color:#000;text-decoration:underline;text-underline-offset:3px;font-size:14px;min-height:0}
+.fichier a.bouton:hover{background:transparent;color:#000}
+
+/* Status messages are notifications, not CTAs. */
+.toast{right:24px;bottom:24px;border:1px solid #d8d8d8;border-radius:10px;background:#fff;color:#000;padding:12px 16px;box-shadow:0 8px 24px rgba(0,0,0,.10);font-size:14px;font-weight:400}
 
 /* Contact-form inspired audit dialog. */
 .dialogue{width:min(1040px,calc(100% - 48px));max-height:calc(100dvh - 48px);border:0;border-radius:0;padding:0;box-shadow:none;background:#fff}
@@ -71,7 +85,7 @@
   .entete-actions:has(.lien-navigation){position:static;display:flex;gap:20px}
   .lien-navigation{font-size:14px}
   .entete-actions:has(.lien-navigation) .bouton.principal{min-height:0;padding:10px 16px;font-size:14px}
-  .hero-droite p{margin-top:42px}
+  .hero-droite h1{padding-bottom:42px}
   .contenu-audit,.barre-laterale{padding-top:48px}
   .dialogue form{padding:44px 32px;grid-template-columns:1fr;gap:28px}
   .dialogue label:nth-of-type(3),.dialogue label:nth-of-type(4){grid-column:auto}
