@@ -1,12 +1,17 @@
 /* Audit interface aligned with Formation Entre-Deux site components. */
-.entete-actions{gap:52px;align-items:center}
-.lien-navigation{border:0;background:transparent;padding:0;cursor:pointer;font-family:Inter,Arial,sans-serif;font-size:18px;font-weight:400;line-height:27px;color:#000;display:inline-flex;align-items:center}
+.entete-actions{gap:40px;align-items:center}
+.entete-actions:has(.lien-navigation){position:absolute;left:50%;right:40px;display:grid;grid-template-columns:max-content max-content 1fr max-content;gap:40px;align-items:center}
+.lien-navigation{border:0;background:transparent;padding:0;cursor:pointer;font-family:Inter,Arial,sans-serif;font-size:16px;font-weight:400;line-height:27px;color:#000;display:inline-flex;align-items:center}
 .lien-navigation:hover{text-decoration:none}
-.entete-actions .bouton.principal{margin-left:0;min-height:48px;padding:15px 24px;font-size:16px}
+.entete-actions:has(.lien-navigation) .bouton.principal{grid-column:4;justify-self:end;min-height:0;padding:10px 26px;font-size:14px}
 
 .ligne-audit{cursor:pointer;transition:none}
 .ligne-audit:hover{background:transparent}
 .ligne-audit h2,.ligne-audit p{font-weight:400!important}
+
+/* Exact visible spacing between the homepage H1 and paragraph. */
+.hero{row-gap:52px}
+.hero-droite h1{padding-bottom:0}
 
 /* The audit page starts at the same vertical position as the homepage hero content: 168px from the viewport top. */
 .contenu-audit{padding-top:76px}
@@ -37,8 +42,8 @@
 .indicateur-nav{font-weight:400;padding-top:12px;padding-bottom:12px}
 .outils-audit{gap:12px;margin-top:36px}
 
-/* File + URL evidence types. */
-.preuve-types{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+/* File and URL evidence blocks are stacked, one per row. */
+.preuve-types{display:grid;grid-template-columns:1fr;gap:32px;align-items:start}
 .ajout-lien{border:1px solid #bbb;padding:24px;display:grid;gap:18px}
 .ajout-lien label{display:grid;gap:7px;font-weight:400;font-size:14px}
 .ajout-lien input{width:100%;border:0;border-bottom:1px solid #222;border-radius:0;padding:10px 0;background:#fff;font-size:16px;outline:0}
@@ -62,10 +67,10 @@
 .dialogue-actions .bouton{min-width:180px;min-height:54px;padding:16px 28px;font-size:16px;font-weight:400}
 
 @media(max-width:950px){
-  .entete-actions{gap:24px}
-  .lien-navigation{font-size:15px}
+  .entete-actions:has(.lien-navigation){position:static;display:flex;gap:20px}
+  .lien-navigation{font-size:14px}
+  .entete-actions:has(.lien-navigation) .bouton.principal{min-height:0;padding:10px 16px;font-size:14px}
   .contenu-audit,.barre-laterale{padding-top:48px}
-  .preuve-types{grid-template-columns:1fr}
   .dialogue form{padding:44px 32px;grid-template-columns:1fr;gap:28px}
   .dialogue label:nth-of-type(3),.dialogue label:nth-of-type(4){grid-column:auto}
   .dialogue-entete,.dialogue-actions{grid-column:1}
