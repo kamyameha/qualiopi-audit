@@ -108,4 +108,7 @@
 .message-auth{grid-column:1;min-height:24px;margin:0;font-size:14px;line-height:22px}
 .message-auth.succes{color:#176b36}
 .message-auth.erreur{color:#a01f1f}
+body.verrouille .entete{visibility:hidden}
+.logo-connexion{position:fixed;top:26px;left:40px;z-index:1;text-decoration:none}
 body.verrouille .dialogue-auth::backdrop{background:#fff;backdrop-filter:none}
+@media(max-width:950px){.logo-connexion{top:22px;left:24px}}
