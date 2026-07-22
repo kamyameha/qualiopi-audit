@@ -11,10 +11,6 @@
 .ligne-audit:hover{background:transparent}
 .ligne-audit h2,.ligne-audit p{font-weight:400!important}
 
-/* Exact site spacing: the H1 alone owns the 52px separation. */
-.hero-droite .hero-title{margin:0;padding:0 0 52px}
-.hero-droite .hero-description{margin:0;padding:0}
-
 /* The audit page starts at the same vertical position as the homepage hero content: 168px from the viewport top. */
 .contenu-audit{padding-top:76px}
 .barre-laterale{padding-top:76px}
