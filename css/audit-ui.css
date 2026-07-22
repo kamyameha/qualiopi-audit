@@ -100,3 +100,10 @@
   .dialogue-actions .bouton{width:100%}
   .statut-indicateur{width:100%;margin-bottom:0}
 }
+.dialogue-auth{width:min(720px,calc(100% - 32px))}
+.dialogue-auth form{grid-template-columns:1fr}
+.dialogue-auth .dialogue-entete,.dialogue-auth .dialogue-actions,.dialogue-auth .meta{grid-column:1}
+.auth-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.auth-actions .lien-navigation{min-height:44px}
+body.verrouille .entete{visibility:hidden}
+body.verrouille .dialogue-auth::backdrop{background:#fff;backdrop-filter:none}
