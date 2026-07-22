@@ -9,6 +9,7 @@
     session:async()=>one(client.auth.getSession()).then(x=>x.session),
     onAuth:cb=>client.auth.onAuthStateChange(cb),
     signIn:(email,password)=>one(client.auth.signInWithPassword({email,password})),
+    signInWithMagicLink:email=>one(client.auth.signInWithOtp({email:email.trim().toLowerCase(),options:{emailRedirectTo:location.origin+location.pathname,shouldCreateUser:false}})),
     signUp:(email,password)=>one(client.auth.signUp({email,password,options:{emailRedirectTo:location.origin+location.pathname}})),
     signOut:()=>one(client.auth.signOut()),
     profile:async()=>{const u=await user();return one(client.from('profiles').select('*').eq('id',u.id).single())},
@@ -28,6 +29,7 @@
       }))
     },
     createAudit:async p=>{const u=await user();return one(client.from('audits').insert({...p,owner_id:u.id}).select().single())},
+    duplicateAudit:async source=>{const u=await user(),copy=await one(client.from('audits').insert({owner_id:u.id,name:`${source.nom} — copie`,audit_date:source.date||null,audit_type:source.type,responsible_name:source.responsable||null,status:source.statutAudit,reviewed_at:source.reviseLe||null}).select().single());await Promise.all(Object.entries(source.indicateurs).map(([n,i])=>one(client.from('audit_indicators').update({status:i.etat,notes:i.notes}).eq('audit_id',copy.id).eq('indicator_number',Number(n)))));const links=Object.entries(source.indicateurs).flatMap(([n,i])=>i.liens.map(l=>({audit_id:copy.id,indicator_number:Number(n),name:l.name||null,url:l.url,created_by:u.id})));if(links.length)await one(client.from('evidence_links').insert(links));return copy},
     updateAudit:(id,p)=>one(client.from('audits').update(p).eq('id',id).select().single()),
     deleteAudit:id=>one(client.from('audits').delete().eq('id',id)),
     updateIndicator:(aid,n,p)=>one(client.from('audit_indicators').update(p).eq('audit_id',aid).eq('indicator_number',n)),
