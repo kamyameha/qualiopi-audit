@@ -1,11 +1,11 @@
 /* Audit interface aligned with Formation Entre-Deux site components. */
-.entete-actions{display:flex;flex:1;align-items:center;justify-content:flex-end;gap:24px}
-.entete{height:var(--hauteur-entete);padding-top:0;padding-bottom:0}
-.entete-actions:has(.lien-navigation){display:flex;align-items:center}
+.entete-navigation{display:flex;flex:1;align-items:center;justify-content:flex-end;gap:40px}
+.entete-cta{display:flex;align-items:center}
+.entete{height:var(--hauteur-entete);padding-top:0;padding-bottom:0;column-gap:40px}
 .lien-navigation{border:0;background:transparent;padding:0;cursor:pointer;font-family: Inter;font-size:16px;font-weight:400;line-height:27px;color:#000;display:inline-flex;align-items:center}
 .lien-navigation:hover{text-decoration:none}
-.entete-actions .bouton.principal{font-size:16px;line-height:1;font-family:Inter,sans-serif;font-weight:500;padding:10px 26px;border-radius:10px;background-color:rgba(0,0,0,.79);color:#fff;border:1px solid #000;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;appearance:none;-webkit-appearance:none;margin:0;height:auto;min-height:0}
-.entete-actions .bouton.principal:hover{background-color:#000;border-color:#000}
+.entete-cta .bouton.principal{font-size:16px;line-height:1;font-family:Inter,sans-serif;font-weight:500;padding:10px 26px;border-radius:10px;background-color:rgba(0,0,0,.79);color:#fff;border:1px solid #000;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;appearance:none;-webkit-appearance:none;margin:0;height:auto;min-height:0}
+.entete-cta .bouton.principal:hover{background-color:#000;border-color:#000}
 
 .ligne-audit{cursor:pointer;transition:none}
 .ligne-audit:hover{background:transparent}
@@ -83,7 +83,8 @@
 .dialogue-actions .bouton{min-width:180px;min-height:54px;padding:16px 28px;font-size:16px;font-weight:400}
 
 @media(max-width:950px){
-  .entete-actions:has(.lien-navigation){display:flex;gap:20px}
+  .entete{column-gap:24px}
+  .entete-navigation{gap:20px}
   .lien-navigation{font-size:14px}
   .hero-gauche{display:none}
   .hero-droite .hero-description{grid-row:2}
@@ -93,7 +94,7 @@
   .dialogue-entete,.dialogue-actions{grid-column:1}
 }
 @media(max-width:600px){
-  .entete-actions .lien-navigation{display:none}
+  .entete-navigation .lien-navigation{display:none}
   .dialogue{width:calc(100% - 24px)}
   .dialogue form{padding:32px 22px}
   .dialogue h2{font-size:30px;line-height:38px}
