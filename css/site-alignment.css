@@ -40,7 +40,7 @@ p,
   display: contents;
 }
 
-.hero-droite h1 {
+.hero-droite .hero-title {
   grid-column: 2;
   grid-row: 1;
   margin: 0;
@@ -74,7 +74,7 @@ p,
   padding-bottom: 0;
 }
 
-.hero-droite p {
+.hero-droite .hero-description {
   grid-column: 2;
   grid-row: 2;
   margin: 0;
@@ -83,7 +83,7 @@ p,
   line-height: 30px;
 }
 
-.hero-droite p::after {
+.hero-droite .hero-description::after {
   content: "Centralisez les preuves, suivez l’avancement des 32 indicateurs et gardez\A une trace claire pour chaque audit de Formation Entre-Deux.";
   display: block;
   white-space: pre-line;
@@ -210,7 +210,7 @@ p,
     padding-bottom: 52px;
   }
   .hero-droite { display: contents; }
-  .hero-droite h1 {
+  .hero-droite .hero-title {
     grid-column: 1;
     grid-row: 1;
     padding-bottom: 52px;
@@ -222,7 +222,7 @@ p,
     grid-row: 2;
     margin: 0 0 18px;
   }
-  .hero-droite p {
+  .hero-droite .hero-description {
     grid-column: 1;
     grid-row: 3;
   }
@@ -250,7 +250,7 @@ p,
 }
 
 @media (max-width: 600px) {
-  .hero-droite h1 { font-size: 42px; line-height: 48px; }
+  .hero-droite .hero-title { font-size: 42px; line-height: 48px; }
   .liste-audits:not(:has(.vide)) { padding-top: 56px; }
   .ligne-audit { padding: 22px 10px; }
   .ligne-audit h2 { font-size: 21px; line-height: 28px; }
