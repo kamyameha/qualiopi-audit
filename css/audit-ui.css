@@ -1,7 +1,7 @@
 /* Audit interface aligned with Formation Entre-Deux site components. */
-.entete-navigation{display:flex;flex:1;align-items:center;justify-content:flex-end;gap:40px}
+.entete-navigation{display:flex;align-items:center;justify-content:flex-start;gap:40px}
 .entete-cta{display:flex;align-items:center}
-.entete{height:var(--hauteur-entete);padding-top:0;padding-bottom:0;column-gap:40px}
+.entete{height:var(--hauteur-entete);padding-top:0;padding-bottom:0;display:grid;grid-template-columns:calc(50vw - var(--entre-deux-page-padding)) minmax(0,1fr) auto;column-gap:0}
 .lien-navigation{border:0;background:transparent;padding:0;cursor:pointer;font-family: Inter;font-size:16px;font-weight:400;line-height:27px;color:#000;display:inline-flex;align-items:center}
 .lien-navigation:hover{text-decoration:none}
 .entete-cta .bouton.principal{font-size:16px;line-height:1;font-family:Inter,sans-serif;font-weight:500;padding:10px 26px;border-radius:10px;background-color:rgba(0,0,0,.79);color:#fff;border:1px solid #000;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;appearance:none;-webkit-appearance:none;margin:0;height:auto;min-height:0}
@@ -83,11 +83,10 @@
 .dialogue-actions .bouton{min-width:180px;min-height:54px;padding:16px 28px;font-size:16px;font-weight:400}
 
 @media(max-width:950px){
-  .entete{column-gap:24px}
+  .entete{grid-template-columns:auto 1fr auto;column-gap:24px}
   .entete-navigation{gap:20px}
   .lien-navigation{font-size:14px}
   .hero-gauche{display:none}
-  .hero-droite .hero-description{grid-row:2}
   .contenu-audit,.barre-laterale{padding-top:48px}
   .dialogue form{padding:44px 32px;grid-template-columns:1fr;gap:28px}
   .dialogue label:nth-of-type(3),.dialogue label:nth-of-type(4){grid-column:auto}

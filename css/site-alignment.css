@@ -28,21 +28,16 @@ p,
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  align-content: start;
   align-items: start;
-  min-height: 600px;
   padding-top: 168px;
   padding-bottom: 0;
 }
 
 .hero-droite {
-  display: contents;
+  grid-column: 2;
 }
 
 .hero-droite .hero-title {
-  grid-column: 2;
-  grid-row: 1;
   margin: 0;
   padding-bottom: 52px;
   font-size: 76px;
@@ -64,13 +59,11 @@ p,
 }
 
 .accueil-vide .hero {
-  flex: 0 0 540px;
-  min-height: 540px;
+  width: 100%;
 }
 
 .hero-gauche {
   grid-column: 1;
-  grid-row: 2;
   align-self: start;
 }
 
@@ -80,21 +73,9 @@ p,
 }
 
 .hero-droite .hero-description {
-  grid-column: 2;
-  grid-row: 2;
   margin: 0;
-  padding-bottom: 0;
-  font-size: 0;
-  line-height: 30px;
-}
-
-.hero-droite .hero-description::after {
-  content: "Centralisez les preuves, suivez l’avancement des 32 indicateurs et gardez\A une trace claire pour chaque audit de Formation Entre-Deux.";
-  display: block;
-  white-space: pre-line;
-  font-family: Inter;
+  padding: 0;
   font-size: 18px;
-  font-weight: 400;
   line-height: 30px;
 }
 
@@ -190,27 +171,17 @@ p,
   :root { --entre-deux-page-padding: 24px; }
   .hero {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    min-height: 0;
     padding-top: 140px;
     padding-bottom: 52px;
   }
-  .hero-droite { display: contents; }
+  .hero-droite { grid-column: 1; }
   .hero-droite .hero-title {
-    grid-column: 1;
-    grid-row: 1;
     padding-bottom: 52px;
     font-size: 54px;
     line-height: 60px;
   }
   .hero-gauche {
-    grid-column: 1;
-    grid-row: 2;
-    margin: 0 0 18px;
-  }
-  .hero-droite .hero-description {
-    grid-column: 1;
-    grid-row: 3;
+    display: none;
   }
   .liste-audits:not(:has(.vide)) { padding-top: 80px; }
   .entete-tableau,
@@ -224,8 +195,7 @@ p,
     min-height: auto;
   }
   #application.accueil-vide{min-height:0;display:block}
-  .accueil-vide .page{min-height:0;display:block}
-  .accueil-vide .hero{min-height:0}
+  .accueil-vide .page{display:block}
   .vide {
     min-height: auto;
     padding: 40px 20px;
