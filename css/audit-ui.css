@@ -4,7 +4,7 @@
 .entete-actions:has(.lien-navigation){display:flex;align-items:center}
 .lien-navigation{border:0;background:transparent;padding:0;cursor:pointer;font-family: Inter;font-size:16px;font-weight:400;line-height:27px;color:#000;display:inline-flex;align-items:center}
 .lien-navigation:hover{text-decoration:none}
-.entete-actions .bouton.principal{font-size:16px;line-height:1;font-family:Inter,sans-serif;font-weight:500;padding:16px 36px;border-radius:10px;background-color:rgba(0,0,0,.79);color:#fff;border:1px solid #000;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;appearance:none;-webkit-appearance:none;margin:0;height:auto;min-height:0}
+.entete-actions .bouton.principal{font-size:16px;line-height:1;font-family:Inter,sans-serif;font-weight:500;padding:10px 26px;border-radius:10px;background-color:rgba(0,0,0,.79);color:#fff;border:1px solid #000;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;appearance:none;-webkit-appearance:none;margin:0;height:auto;min-height:0}
 .entete-actions .bouton.principal:hover{background-color:#000;border-color:#000}
 
 .ligne-audit{cursor:pointer;transition:none}
@@ -12,9 +12,8 @@
 .ligne-audit h2,.ligne-audit p{font-weight:400!important}
 
 /* Exact site spacing: the H1 alone owns the 52px separation. */
-.hero{row-gap:0}
-.hero-droite h1{margin:0;padding-bottom:52px}
-.hero-droite p{margin:0!important;padding:0!important}
+.hero-droite .hero-title{margin:0;padding:0 0 52px}
+.hero-droite .hero-description{margin:0;padding:0}
 
 /* The audit page starts at the same vertical position as the homepage hero content: 168px from the viewport top. */
 .contenu-audit{padding-top:76px}
@@ -86,10 +85,8 @@
 @media(max-width:950px){
   .entete-actions:has(.lien-navigation){display:flex;gap:20px}
   .lien-navigation{font-size:14px}
-  .hero{row-gap:0}
   .hero-gauche{display:none}
-  .hero-droite p{grid-row:2}
-  .hero-droite h1{padding-bottom:52px}
+  .hero-droite .hero-description{grid-row:2}
   .contenu-audit,.barre-laterale{padding-top:48px}
   .dialogue form{padding:44px 32px;grid-template-columns:1fr;gap:28px}
   .dialogue label:nth-of-type(3),.dialogue label:nth-of-type(4){grid-column:auto}
@@ -119,6 +116,8 @@
 .message-auth.succes{color:#176b36}
 .message-auth.erreur{color:#a01f1f}
 body.verrouille .entete{visibility:hidden}
+body.initialisation .entete{visibility:hidden}
+.ecran-chargement{min-height:100dvh;display:flex;align-items:center;justify-content:center;font-size:16px}
 .logo-connexion{position:fixed;top:26px;left:40px;z-index:1;text-decoration:none}
 body.verrouille .dialogue-auth::backdrop{background:#fff;backdrop-filter:none}
 @media(max-width:950px){.logo-connexion{top:22px;left:24px}}
