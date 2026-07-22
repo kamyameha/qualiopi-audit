@@ -98,15 +98,19 @@
   .login-secondary-actions{align-items:flex-start;flex-direction:column;gap:12px}
   .statut-indicateur{width:100%;margin-bottom:0}
 }
-.dialogue-auth{width:min(720px,calc(100% - 32px))}
-.dialogue-auth form{grid-template-columns:1fr}
+.dialogue-auth{width:min(1200px,calc(100% - 80px))}
+.dialogue-auth form{grid-template-columns:1fr 1fr;column-gap:0;row-gap:0;padding:144px 0 64px}
 .dialogue-auth form[hidden]{display:none}
-.dialogue-auth .dialogue-entete,.dialogue-auth .dialogue-actions,.dialogue-auth .meta{grid-column:1}
+.auth-editorial{width:100%;padding-right:72px}
+.auth-editorial h2{margin:0;padding:0 0 32px;font-size:70px;font-weight:700;line-height:80px;letter-spacing:0}
+.auth-description{max-width:450px;margin:0;font-size:18px;line-height:30px}
+.auth-fields{display:grid;align-content:start;gap:38px;width:100%}
+.dialogue-auth .dialogue-actions,.dialogue-auth .meta{grid-column:auto}
 .auth-actions{display:grid;justify-items:start;gap:18px}
-.login-secondary-actions{display:grid;gap:20px}
+.login-secondary-actions{display:grid;gap:24px;margin-top:52px}
 .login-secondary-actions>div{display:grid;gap:2px}
 .login-secondary-actions p{margin:0;font-size:16px;line-height:27px}
-.auth-actions>.retour-connexion{margin-top:2px}
+.auth-editorial>.retour-connexion{margin-top:52px}
 .auth-actions .bouton[disabled]{cursor:wait;opacity:.65}
 .text-link{appearance:none;-webkit-appearance:none;margin:0;padding:0;border:0;background:transparent;color:#000;font-family:Inter;font-size:16px;font-weight:400;line-height:27px;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
 .text-link:focus-visible{outline:2px solid #000;outline-offset:4px}
@@ -125,3 +129,18 @@ body.initialisation .entete{visibility:hidden}
 .logo-connexion{position:fixed;top:26px;left:40px;z-index:1;text-decoration:none}
 body.verrouille .dialogue-auth::backdrop{background:#fff;backdrop-filter:none}
 @media(max-width:950px){.logo-connexion{top:22px;left:24px}}
+@media(max-width:950px){
+  .dialogue-auth{width:calc(100% - 48px)}
+  .dialogue-auth form{grid-template-columns:1fr;gap:48px;padding:132px 0 48px}
+  .auth-editorial{padding-right:0}
+  .auth-editorial h2{font-size:54px;line-height:60px}
+  .auth-description{max-width:600px}
+}
+@media(max-width:600px){
+  .dialogue-auth{width:calc(100% - 48px)}
+  .dialogue-auth form{gap:40px;padding-top:120px}
+  .auth-editorial h2{font-size:42px;line-height:48px}
+  .auth-fields{gap:28px}
+  .login-secondary-actions{gap:18px;margin-top:40px}
+  .auth-editorial>.retour-connexion{margin-top:40px}
+}
