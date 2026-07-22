@@ -1,10 +1,11 @@
 /* Audit interface aligned with Formation Entre-Deux site components. */
-.entete-actions{gap:40px;align-items:center}
+.entete-actions{flex:1;gap:40px;align-items:center}
 .entete{height:var(--hauteur-entete);padding-top:0;padding-bottom:0}
-.entete-actions:has(.lien-navigation){position:absolute;top:50%;left:50%;right:40px;transform:translateY(-50%);display:grid;grid-template-columns:max-content max-content 1fr max-content;gap:40px;align-items:center}
+.entete-actions:has(.lien-navigation){display:flex;align-items:center}
 .lien-navigation{border:0;background:transparent;padding:0;cursor:pointer;font-family: Inter;font-size:16px;font-weight:400;line-height:27px;color:#000;display:inline-flex;align-items:center}
 .lien-navigation:hover{text-decoration:none}
-.entete-actions:has(.lien-navigation) .bouton.principal{grid-column:4;justify-self:end;min-height:0;padding:10px 26px;font-size:14px}
+.entete-actions:has(.lien-navigation) .lien-navigation:first-child{margin-left:auto}
+.entete-actions:has(.lien-navigation) .bouton.principal{margin-left:auto;min-height:42px;padding:12px 26px;font-size:14px;border-radius:10px}
 
 .ligne-audit{cursor:pointer;transition:none}
 .ligne-audit:hover{background:transparent}
@@ -83,9 +84,9 @@
 .dialogue-actions .bouton{min-width:180px;min-height:54px;padding:16px 28px;font-size:16px;font-weight:400}
 
 @media(max-width:950px){
-  .entete-actions:has(.lien-navigation){position:static;transform:none;display:flex;gap:20px}
+  .entete-actions:has(.lien-navigation){display:flex;gap:20px}
   .lien-navigation{font-size:14px}
-  .entete-actions:has(.lien-navigation) .bouton.principal{min-height:0;padding:10px 16px;font-size:14px}
+  .entete-actions:has(.lien-navigation) .bouton.principal{min-height:42px;padding:10px 16px;font-size:14px}
   .hero{row-gap:52px}
   .hero-gauche{display:none}
   .hero-droite p{grid-row:2}
