@@ -16,7 +16,7 @@ p,
 .hero-droite p,
 .sur-titre,
 .ligne-audit p {
-  font-family: Inter, Arial, sans-serif;
+  font-family: Inter;
   font-weight: 400;
 }
 
@@ -75,7 +75,7 @@ p,
   content: "Centralisez les preuves, suivez l’avancement des 32 indicateurs et gardez\A une trace claire pour chaque audit de Formation Entre-Deux.";
   display: block;
   white-space: pre-line;
-  font-family: Inter, Arial, sans-serif;
+  font-family: Inter;
   font-size: 18px;
   font-weight: 400;
   line-height: 30px;
@@ -155,7 +155,7 @@ p,
 .vide h2 {
   max-width: none;
   margin: 0;
-  font-family: Inter, Arial, sans-serif;
+  font-family: Inter;
   font-size: 38px;
   font-weight: 700;
   line-height: 48px;
@@ -170,7 +170,7 @@ p,
   min-height: 0;
   padding: 16px;
   color: #fff;
-  font-family: Inter, Arial, sans-serif;
+  font-family: Inter;
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
