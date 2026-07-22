@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="css/main.css?v=1.0.6">
-  <link rel="stylesheet" href="css/site-alignment.css?v=1.0.6">
-  <link rel="stylesheet" href="css/audit-ui.css?v=1.0.6">
+  <link rel="stylesheet" href="css/main.css?v=1.0.7">
+  <link rel="stylesheet" href="css/site-alignment.css?v=1.0.7">
+  <link rel="stylesheet" href="css/audit-ui.css?v=1.0.7">
 </head>
 <body class="initialisation">
   <header class="entete">
@@ -42,8 +42,10 @@
       <label>Mot de passe<input name="password" type="password" autocomplete="current-password" minlength="8" required placeholder="8 caractères minimum"></label>
       <div class="dialogue-actions auth-actions">
         <button class="bouton principal" type="submit" name="action" value="signin">Se connecter</button>
-        <button class="bouton secondaire" type="submit" name="action" value="signup">Créer mon accès</button>
-        <button class="bouton secondaire" type="submit" name="action" value="magic" formnovalidate>Recevoir un lien de connexion</button>
+        <div class="login-secondary-actions">
+          <button class="text-link" type="button" id="creerAcces">Créer mon accès</button>
+          <button class="text-link" type="button" id="lienConnexion">Recevoir un lien de connexion</button>
+        </div>
       </div>
       <p class="message-auth" id="messageAuth" role="status" aria-live="polite"></p>
     </form>
@@ -57,9 +59,9 @@
   </dialog>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabase-config.js"></script>
-  <script src="js/supabase-service.js?v=1.0.6"></script>
-  <script src="js/version.js?v=1.0.6"></script>
-  <script src="js/app.js?v=1.0.6"></script>
-  <script src="js/service-worker.js?v=1.0.6"></script>
+  <script src="js/supabase-service.js?v=1.0.7"></script>
+  <script src="js/version.js?v=1.0.7"></script>
+  <script src="js/app.js?v=1.0.7"></script>
+  <script src="js/service-worker.js?v=1.0.7"></script>
 </body>
 </html>
