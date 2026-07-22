@@ -129,9 +129,9 @@ p,
 
 .liste-audits:has(.vide) {
   display: flex;
-  min-height: calc(100dvh - 600px);
-  padding: 0;
-  background: transparent;
+  min-height: 360px;
+  padding: 72px var(--entre-deux-page-padding);
+  background: var(--entre-deux-pink);
 }
 
 .liste-audits:has(.vide) .entete-tableau {
@@ -139,36 +139,41 @@ p,
 }
 
 .vide {
-  display: grid;
-  grid-template-columns: 10fr 2fr;
-  gap: 35px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   flex: 1;
   width: 100%;
-  min-height: calc(100dvh - 600px);
+  min-height: 216px;
   margin: 0;
-  padding: 20px 40px;
-  background: var(--entre-deux-orange);
+  padding: 48px 24px;
+  text-align: center;
+  background: transparent;
   border: 0;
 }
 
-.vide h2 {
-  max-width: none;
+.vide h3 {
+  max-width: 680px;
   margin: 0;
   font-family: Inter;
-  font-size: 38px;
-  font-weight: 700;
-  line-height: 48px;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 40px;
   letter-spacing: 0;
 }
 
-.vide p { display: none; }
+.vide p {
+  max-width: 620px;
+  margin: 16px 0 0;
+  font-size: 18px;
+  line-height: 30px;
+}
 
 .vide .bouton.principal {
-  width: 100%;
-  min-width: 0;
-  min-height: 0;
-  padding: 16px;
+  min-height: 48px;
+  margin-top: 24px;
+  padding: 14px 28px;
   color: #fff;
   font-family: Inter;
   font-size: 16px;
@@ -215,19 +220,16 @@ p,
     padding-left: 16px;
   }
   .liste-audits:has(.vide) {
+    padding: 48px var(--entre-deux-page-padding);
     min-height: auto;
   }
   .vide {
-    grid-template-columns: 1fr;
-    gap: 34px;
-    justify-items: stretch;
     min-height: auto;
-    padding: 40px;
+    padding: 40px 20px;
   }
-  .vide h2 {
+  .vide h3 {
     font-size: 30px;
     line-height: 40px;
-    text-align: center;
   }
 }
 
@@ -240,7 +242,7 @@ p,
   .vide {
     padding: 32px 24px;
   }
-  .vide h2 {
+  .vide h3 {
     font-size: 30px;
     line-height: 40px;
   }
