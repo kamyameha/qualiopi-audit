@@ -10,7 +10,6 @@
     onAuth:cb=>client.auth.onAuthStateChange(cb),
     signIn:(email,password)=>one(client.auth.signInWithPassword({email,password})),
     signUp:(email,password)=>one(client.auth.signUp({email,password,options:{emailRedirectTo:location.origin+location.pathname}})),
-    magicLink:(email)=>one(client.auth.signInWithOtp({email,options:{emailRedirectTo:location.origin+location.pathname,shouldCreateUser:true}})),
     signOut:()=>one(client.auth.signOut()),
     profile:async()=>{const u=await user();return one(client.from('profiles').select('*').eq('id',u.id).single())},
     acceptInvitations:()=>one(client.rpc('accept_my_invitations')),
