@@ -99,13 +99,16 @@
   .dialogue h2{font-size:30px;line-height:38px}
   .dialogue-actions{align-items:stretch}
   .dialogue-actions .bouton{width:100%}
+  .login-secondary-actions{align-items:flex-start;flex-direction:column;gap:12px}
   .statut-indicateur{width:100%;margin-bottom:0}
 }
 .dialogue-auth{width:min(720px,calc(100% - 32px))}
 .dialogue-auth form{grid-template-columns:1fr}
 .dialogue-auth .dialogue-entete,.dialogue-auth .dialogue-actions,.dialogue-auth .meta{grid-column:1}
-.auth-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.auth-actions .lien-navigation{min-height:44px}
+.auth-actions{display:grid;justify-items:start;gap:18px}
+.login-secondary-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.text-link{appearance:none;-webkit-appearance:none;margin:0;padding:0;border:0;background:transparent;color:#000;font-family:Inter;font-size:16px;font-weight:400;line-height:27px;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.text-link:focus-visible{outline:2px solid #000;outline-offset:4px}
 .champ-date{cursor:pointer}
 .champ-date input{cursor:pointer}
 .champ-date:focus-visible{outline:2px solid #000;outline-offset:3px}
