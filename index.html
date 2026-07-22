@@ -37,13 +37,12 @@
     <form id="formulaireConnexion">
       <div class="dialogue-entete"><div><h2>Connexion</h2><p>Accédez à vos audits Qualiopi sécurisés.</p></div></div>
       <label>Adresse email<input name="email" type="email" autocomplete="email" required placeholder="vous@exemple.fr"></label>
-      <label>Mot de passe<input name="password" type="password" autocomplete="current-password" minlength="8" placeholder="8 caractères minimum"></label>
+      <label>Mot de passe<input name="password" type="password" autocomplete="current-password" minlength="8" required placeholder="8 caractères minimum"></label>
       <div class="dialogue-actions auth-actions">
-        <button class="bouton principal" name="action" value="signin">Se connecter</button>
-        <button class="bouton secondaire" name="action" value="signup">Créer mon accès</button>
-        <button class="lien-navigation" name="action" value="magic">Recevoir un lien par email</button>
+        <button class="bouton principal" type="submit" name="action" value="signin">Se connecter</button>
+        <button class="bouton secondaire" type="submit" name="action" value="signup">Créer mon accès</button>
       </div>
-      <p class="meta">Les comptes Formation Entre-Deux deviennent automatiquement membres du staff. Les comptes externes ne voient que les audits auxquels ils sont invités.</p>
+      <p class="message-auth" id="messageAuth" role="status" aria-live="polite"></p>
     </form>
   </dialog>
   <dialog id="dialoguePartage" class="dialogue">
