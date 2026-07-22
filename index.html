@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="css/main.css?v=1.0.8">
-  <link rel="stylesheet" href="css/site-alignment.css?v=1.0.8">
-  <link rel="stylesheet" href="css/audit-ui.css?v=1.0.8">
+  <link rel="stylesheet" href="css/main.css?v=1.0.9">
+  <link rel="stylesheet" href="css/site-alignment.css?v=1.0.9">
+  <link rel="stylesheet" href="css/audit-ui.css?v=1.0.9">
 </head>
 <body class="initialisation">
   <header class="entete">
@@ -37,17 +37,30 @@
   <dialog id="dialogueConnexion" class="dialogue dialogue-auth">
     <a class="logo-bouton logo-connexion" href="https://formationentredeux.com/" aria-label="Visiter le site Formation Entre-Deux"><img src="assets/logo-entre-deux.png" alt="Formation Entre-Deux"></a>
     <form id="formulaireConnexion">
-      <div class="dialogue-entete"><div><h2>Connexion</h2><p>Accédez à vos audits Qualiopi sécurisés.</p></div></div>
-      <label>Adresse email<input name="email" type="email" autocomplete="email" required autofocus placeholder="vous@exemple.fr"></label>
+      <div class="dialogue-entete"><div><h2>Connexion</h2><p>Accédez à l’espace de gestion des audits Qualiopi.</p></div></div>
+      <label>Adresse email professionnelle<input name="email" type="email" autocomplete="email" required autofocus placeholder="vous@formationentredeux.com"></label>
       <label>Mot de passe<input name="password" type="password" autocomplete="current-password" minlength="8" required placeholder="8 caractères minimum"></label>
       <div class="dialogue-actions auth-actions">
         <button class="bouton principal" type="submit" name="action" value="signin">Se connecter</button>
         <div class="login-secondary-actions">
-          <button class="text-link" type="button" id="creerAcces">Créer mon accès</button>
-          <button class="text-link" type="button" id="lienConnexion">Recevoir un lien de connexion</button>
+          <div><p>Première connexion d’un membre de l’équipe ?</p><button class="text-link" type="button" id="creerAcces">Créer mon accès</button></div>
+          <div><p>Vous avez été invité à consulter un audit ?</p><button class="text-link" type="button" id="lienConnexion">Recevoir un lien de connexion</button></div>
         </div>
       </div>
       <p class="message-auth" id="messageAuth" role="status" aria-live="polite"></p>
+    </form>
+    <form id="formulaireCreationAcces" hidden>
+      <div class="dialogue-entete"><div><h2>Créer mon accès staff</h2><p>Cette option est réservée aux membres de Formation Entre-Deux disposant d’une adresse email @formationentredeux.com.</p></div></div>
+      <label>Adresse email professionnelle<input name="email" type="email" autocomplete="email" required placeholder="vous@formationentredeux.com"></label>
+      <label>Mot de passe<input name="password" type="password" autocomplete="new-password" minlength="8" required placeholder="8 caractères minimum"></label>
+      <div class="dialogue-actions auth-actions"><button class="bouton principal" type="submit">Créer mon accès</button><button class="text-link retour-connexion" type="button">Retour à la connexion</button></div>
+      <p class="message-auth" role="status" aria-live="polite"></p>
+    </form>
+    <form id="formulaireLienConnexion" hidden>
+      <div class="dialogue-entete"><div><h2>Accéder à un audit partagé</h2><p>Saisissez l’adresse email sur laquelle vous avez reçu votre invitation.</p></div></div>
+      <label>Adresse email invitée<input name="email" type="email" autocomplete="email" required placeholder="auditeur@exemple.fr"></label>
+      <div class="dialogue-actions auth-actions"><button class="bouton principal" type="submit">Recevoir le lien</button><button class="text-link retour-connexion" type="button">Retour à la connexion</button></div>
+      <p class="message-auth" role="status" aria-live="polite"></p>
     </form>
   </dialog>
   <dialog id="dialoguePartage" class="dialogue">
@@ -59,9 +72,9 @@
   </dialog>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabase-config.js"></script>
-  <script src="js/supabase-service.js?v=1.0.8"></script>
-  <script src="js/version.js?v=1.0.8"></script>
-  <script src="js/app.js?v=1.0.8"></script>
-  <script src="js/service-worker.js?v=1.0.8"></script>
+  <script src="js/supabase-service.js?v=1.0.9"></script>
+  <script src="js/version.js?v=1.0.9"></script>
+  <script src="js/app.js?v=1.0.9"></script>
+  <script src="js/service-worker.js?v=1.0.9"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
     session:async()=>one(client.auth.getSession()).then(x=>x.session),
     onAuth:cb=>client.auth.onAuthStateChange(cb),
     signIn:(email,password)=>one(client.auth.signInWithPassword({email,password})),
+    authRoute:email=>one(client.rpc('auth_access_route',{requested_email:email.trim().toLowerCase()})),
     signInWithMagicLink:email=>one(client.auth.signInWithOtp({email:email.trim().toLowerCase(),options:{emailRedirectTo:location.origin+location.pathname,shouldCreateUser:false}})),
     signUp:(email,password)=>one(client.auth.signUp({email,password,options:{emailRedirectTo:location.origin+location.pathname}})),
     signOut:()=>one(client.auth.signOut()),

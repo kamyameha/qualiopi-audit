@@ -100,9 +100,14 @@
 }
 .dialogue-auth{width:min(720px,calc(100% - 32px))}
 .dialogue-auth form{grid-template-columns:1fr}
+.dialogue-auth form[hidden]{display:none}
 .dialogue-auth .dialogue-entete,.dialogue-auth .dialogue-actions,.dialogue-auth .meta{grid-column:1}
 .auth-actions{display:grid;justify-items:start;gap:18px}
-.login-secondary-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.login-secondary-actions{display:grid;gap:20px}
+.login-secondary-actions>div{display:grid;gap:2px}
+.login-secondary-actions p{margin:0;font-size:16px;line-height:27px}
+.auth-actions>.retour-connexion{margin-top:2px}
+.auth-actions .bouton[disabled]{cursor:wait;opacity:.65}
 .text-link{appearance:none;-webkit-appearance:none;margin:0;padding:0;border:0;background:transparent;color:#000;font-family:Inter;font-size:16px;font-weight:400;line-height:27px;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
 .text-link:focus-visible{outline:2px solid #000;outline-offset:4px}
 .champ-date{cursor:pointer}
