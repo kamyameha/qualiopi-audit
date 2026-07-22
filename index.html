@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="css/main.css?v=1.0.2">
-  <link rel="stylesheet" href="css/site-alignment.css?v=1.0.2">
-  <link rel="stylesheet" href="css/audit-ui.css?v=1.0.2">
+  <link rel="stylesheet" href="css/main.css?v=1.0.3">
+  <link rel="stylesheet" href="css/site-alignment.css?v=1.0.3">
+  <link rel="stylesheet" href="css/audit-ui.css?v=1.0.3">
 </head>
 <body>
   <header class="entete">
@@ -27,7 +27,7 @@
       <div class="dialogue-entete"><div><p class="sur-titre" id="libelleDialogue">Nouvel audit</p><h2 id="titreDialogue">Créer un audit</h2></div><button class="icone-bouton" type="button" id="fermerDialogue" aria-label="Fermer">×</button></div>
       <input type="hidden" name="auditId">
       <label>Nom de l’audit<input name="nom" required placeholder="Audit 2026"></label>
-      <label>Date de l’audit<input name="date" type="date"></label>
+      <label class="champ-date" id="zoneDateAudit" tabindex="0">Date de l’audit<input name="date" type="date"></label>
       <label>Type d’audit<select name="type"><option>Audit initial</option><option selected>Audit de surveillance</option><option>Audit de renouvellement</option></select></label>
       <label>Responsable de l’audit<input name="responsable" required placeholder="Ex. Betty"></label>
       <div class="dialogue-actions"><button class="bouton principal" type="submit" id="enregistrerAudit">Créer l’audit</button></div>
@@ -42,6 +42,7 @@
       <div class="dialogue-actions auth-actions">
         <button class="bouton principal" type="submit" name="action" value="signin">Se connecter</button>
         <button class="bouton secondaire" type="submit" name="action" value="signup">Créer mon accès</button>
+        <button class="bouton secondaire" type="submit" name="action" value="magic" formnovalidate>Recevoir un lien de connexion</button>
       </div>
       <p class="message-auth" id="messageAuth" role="status" aria-live="polite"></p>
     </form>
@@ -55,9 +56,9 @@
   </dialog>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabase-config.js"></script>
-  <script src="js/supabase-service.js?v=1.0.2"></script>
-  <script src="js/version.js?v=1.0.2"></script>
-  <script src="js/app.js?v=1.0.2"></script>
-  <script src="js/service-worker.js?v=1.0.2"></script>
+  <script src="js/supabase-service.js?v=1.0.3"></script>
+  <script src="js/version.js?v=1.0.3"></script>
+  <script src="js/app.js?v=1.0.3"></script>
+  <script src="js/service-worker.js?v=1.0.3"></script>
 </body>
 </html>

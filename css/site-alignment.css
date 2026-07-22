@@ -51,6 +51,18 @@ p,
   letter-spacing: -3px;
 }
 
+.page:has(.vide) {
+  min-height: 100dvh;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.page:has(.vide) .hero {
+  flex: 0 0 540px;
+  min-height: 540px;
+}
+
 .hero-gauche {
   grid-column: 1;
   grid-row: 2;
@@ -129,8 +141,10 @@ p,
 
 .liste-audits:has(.vide) {
   display: flex;
-  min-height: 360px;
-  padding: 72px var(--entre-deux-page-padding);
+  flex: 1;
+  min-height: 0;
+  margin: 0;
+  padding: 40px var(--entre-deux-page-padding);
   background: var(--entre-deux-pink);
 }
 
@@ -145,9 +159,9 @@ p,
   justify-content: center;
   flex: 1;
   width: 100%;
-  min-height: 216px;
+  min-height: 0;
   margin: 0;
-  padding: 48px 24px;
+  padding: 32px 24px;
   text-align: center;
   background: transparent;
   border: 0;
@@ -199,7 +213,7 @@ p,
   .hero-droite h1 {
     grid-column: 1;
     grid-row: 1;
-    padding-bottom: 42px;
+    padding-bottom: 52px;
     font-size: 54px;
     line-height: 60px;
   }
@@ -223,6 +237,8 @@ p,
     padding: 48px var(--entre-deux-page-padding);
     min-height: auto;
   }
+  .page:has(.vide){min-height:0;display:block}
+  .page:has(.vide) .hero{min-height:0}
   .vide {
     min-height: auto;
     padding: 40px 20px;
