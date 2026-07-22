@@ -105,5 +105,8 @@
 .dialogue-auth .dialogue-entete,.dialogue-auth .dialogue-actions,.dialogue-auth .meta{grid-column:1}
 .auth-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .auth-actions .lien-navigation{min-height:44px}
+.message-auth{grid-column:1;min-height:24px;margin:0;font-size:14px;line-height:22px}
+.message-auth.succes{color:#176b36}
+.message-auth.erreur{color:#a01f1f}
 body.verrouille .entete{visibility:hidden}
 body.verrouille .dialogue-auth::backdrop{background:#fff;backdrop-filter:none}
