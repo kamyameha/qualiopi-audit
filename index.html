@@ -10,16 +10,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="css/main.css?v=1.0.3">
-  <link rel="stylesheet" href="css/site-alignment.css?v=1.0.3">
-  <link rel="stylesheet" href="css/audit-ui.css?v=1.0.3">
+  <link rel="stylesheet" href="css/main.css?v=1.0.4">
+  <link rel="stylesheet" href="css/site-alignment.css?v=1.0.4">
+  <link rel="stylesheet" href="css/audit-ui.css?v=1.0.4">
 </head>
-<body>
+<body class="initialisation">
   <header class="entete">
     <button class="logo-bouton" id="retourAccueil" aria-label="Retour à l’accueil des audits"><img src="assets/logo-entre-deux.png" alt="Formation Entre-Deux"></button>
-    <div class="entete-actions" id="actionsEntete"><button class="bouton principal" id="nouvelAudit">Créer un audit</button></div>
+    <div class="entete-actions" id="actionsEntete"></div>
   </header>
-  <main id="application"></main>
+  <main id="application"><section class="ecran-chargement" aria-live="polite">Chargement…</section></main>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <div class="mise-a-jour" id="miseAJour" hidden><span>Une nouvelle version est disponible.</span><button id="actualiserApplication">Actualiser</button></div>
   <dialog id="dialogueAudit" class="dialogue">
@@ -56,9 +56,9 @@
   </dialog>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabase-config.js"></script>
-  <script src="js/supabase-service.js?v=1.0.3"></script>
-  <script src="js/version.js?v=1.0.3"></script>
-  <script src="js/app.js?v=1.0.3"></script>
-  <script src="js/service-worker.js?v=1.0.3"></script>
+  <script src="js/supabase-service.js?v=1.0.4"></script>
+  <script src="js/version.js?v=1.0.4"></script>
+  <script src="js/app.js?v=1.0.4"></script>
+  <script src="js/service-worker.js?v=1.0.4"></script>
 </body>
 </html>
