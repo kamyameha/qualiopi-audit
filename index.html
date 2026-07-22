@@ -33,6 +33,26 @@
       <div class="dialogue-actions"><button class="bouton principal" type="submit" id="enregistrerAudit">Créer l’audit</button></div>
     </form>
   </dialog>
+  <dialog id="dialogueConnexion" class="dialogue dialogue-auth">
+    <form id="formulaireConnexion">
+      <div class="dialogue-entete"><div><h2>Connexion</h2><p>Accédez à vos audits Qualiopi sécurisés.</p></div></div>
+      <label>Adresse email<input name="email" type="email" autocomplete="email" required placeholder="vous@exemple.fr"></label>
+      <label>Mot de passe<input name="password" type="password" autocomplete="current-password" minlength="8" placeholder="8 caractères minimum"></label>
+      <div class="dialogue-actions auth-actions">
+        <button class="bouton principal" name="action" value="signin">Se connecter</button>
+        <button class="bouton secondaire" name="action" value="signup">Créer mon accès</button>
+        <button class="lien-navigation" name="action" value="magic">Recevoir un lien par email</button>
+      </div>
+      <p class="meta">Les comptes Formation Entre-Deux deviennent automatiquement membres du staff. Les comptes externes ne voient que les audits auxquels ils sont invités.</p>
+    </form>
+  </dialog>
+  <dialog id="dialoguePartage" class="dialogue">
+    <form id="formulairePartage">
+      <div class="dialogue-entete"><div><h2>Partager l’audit</h2><p>Invitez un lecteur externe. Son accès sera limité à cet audit.</p></div><button class="icone-bouton" type="button" id="fermerPartage" aria-label="Fermer">×</button></div>
+      <label>Adresse email externe<input name="email" type="email" required placeholder="auditeur@exemple.fr"></label>
+      <div class="dialogue-actions"><button class="bouton principal">Créer l’invitation</button></div>
+    </form>
+  </dialog>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabase-config.js"></script>
   <script src="js/supabase-service.js"></script>
