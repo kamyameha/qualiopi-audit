@@ -13,7 +13,20 @@
     signOut:()=>one(client.auth.signOut()),
     profile:async()=>{const u=await user();return one(client.from('profiles').select('*').eq('id',u.id).single())},
     acceptInvitations:()=>one(client.rpc('accept_my_invitations')),
-    listAudits:()=>one(client.from('audits').select('*,audit_indicators(*),evidence_files(*,profiles!evidence_files_uploaded_by_fkey(display_name,email)),evidence_links(*)').order('updated_at',{ascending:false})),
+    listAudits:async()=>{
+      const[audits,indicators,files,links,profiles]=await Promise.all([
+        one(client.from('audits').select('*').order('updated_at',{ascending:false})),
+        one(client.from('audit_indicators').select('*')),
+        one(client.from('evidence_files').select('*')),
+        one(client.from('evidence_links').select('*')),
+        one(client.from('profiles').select('id,display_name,email'))
+      ]),profileById=new Map(profiles.map(p=>[p.id,p]));
+      return audits.map(a=>({...a,
+        audit_indicators:indicators.filter(i=>i.audit_id===a.id),
+        evidence_files:files.filter(f=>f.audit_id===a.id).map(f=>({...f,profiles:profileById.get(f.uploaded_by)||null})),
+        evidence_links:links.filter(l=>l.audit_id===a.id)
+      }))
+    },
     createAudit:async p=>{const u=await user();return one(client.from('audits').insert({...p,owner_id:u.id}).select().single())},
     updateAudit:(id,p)=>one(client.from('audits').update(p).eq('id',id).select().single()),
     deleteAudit:id=>one(client.from('audits').delete().eq('id',id)),
